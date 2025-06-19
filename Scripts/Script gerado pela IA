@@ -1,0 +1,88 @@
+import pandas as pd
+import os
+
+def processar_planilha(caminho_arquivo_entrada, diretorio_saida):
+    """
+    Lê, limpa, formata e renomeia uma única planilha CSV.
+    """
+    try:
+        print(f"Processando: {caminho_arquivo_entrada}...")
+
+        # 1. LER A PLANILHA ORIGINAL (ASSUMINDO SEPARADOR VÍRGULA)
+        df = pd.read_csv(caminho_arquivo_entrada)
+
+        if df.empty:
+            print("  -> AVISO: A planilha está vazia. Pulando.")
+            return
+
+        # 2. LIMPAR NOMES DAS COLUNAS
+        # Converte para minúsculas, remove espaços no início/fim e substitui espaços por _
+        df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+
+        # 3. FORMATAR COLUNAS DE DATA
+        colunas_data = ['date', 'buyer_birth_date']
+        for col in colunas_data:
+            if col in df.columns:
+                df[col] = pd.to_datetime(df[col], errors='coerce').dt.strftime('%d/%m/%Y')
+
+        # 4. REMOVER ESPAÇOS EM BRANCO DAS COLUNAS DE TEXTO
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].str.strip()
+
+        # 5. GERAR NOVO NOME DESCRITIVO
+        # Tenta encontrar o nome da plataforma na coluna 'site'
+        nome_plataforma = "Desconhecida"
+        if 'site' in df.columns:
+            # Pega o primeiro nome de site encontrado na planilha
+            plataformas = df['site'].unique()
+            if len(plataformas) > 0:
+                nome_plataforma = "".join(c for c in plataformas[0] if c.isalnum())
+
+        # Tenta encontrar o período de vendas
+        periodo_vendas = "SemData"
+        if 'date' in df.columns:
+            datas_validas = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce').dropna()
+            if not datas_validas.empty:
+                data_inicio = datas_validas.min().strftime('%Y%m%d')
+                data_fim = datas_validas.max().strftime('%Y%m%d')
+                periodo_vendas = f"{data_inicio}_ate_{data_fim}"
+
+        novo_nome_arquivo = f"Vendas_{nome_plataforma}_{periodo_vendas}.csv"
+
+        # 6. SALVAR O ARQUIVO PROCESSADO COM FORMATO COMPATÍVEL
+        caminho_arquivo_saida = os.path.join(diretorio_saida, novo_nome_arquivo)
+        df.to_csv(caminho_arquivo_saida, sep=';', encoding='utf-8-sig', index=False)
+        
+        print(f"  -> Salvo como: {novo_nome_arquivo}")
+
+    except Exception as e:
+        print(f"  -> ERRO ao processar o arquivo {caminho_arquivo_entrada}: {e}")
+
+
+# --- CONFIGURAÇÃO E EXECUÇÃO ---
+if __name__ == "__main__":
+    # Defina os diretórios de entrada e saída
+    diretorio_dados_brutos = "data/01_raw"
+    diretorio_dados_processados = "data/02_processed"
+
+    # Crie o diretório de saída se ele não existir
+    os.makedirs(diretorio_dados_processados, exist_ok=True)
+
+    print("--- INICIANDO PROCESSAMENTO DE PLANILHAS ---")
+    
+    # Verifique se o diretório de entrada existe
+    if not os.path.isdir(diretorio_dados_brutos):
+        print(f"ERRO: Diretório de entrada '{diretorio_dados_brutos}' não encontrado.")
+        print("Por favor, crie a pasta e coloque seus arquivos CSV nela.")
+    else:
+        # Liste todos os arquivos CSV no diretório de entrada
+        arquivos_para_processar = [f for f in os.listdir(diretorio_dados_brutos) if f.endswith('.csv')]
+        
+        if not arquivos_para_processar:
+            print(f"Nenhum arquivo .csv encontrado em '{diretorio_dados_brutos}'.")
+        else:
+            for nome_arquivo in arquivos_para_processar:
+                caminho_completo = os.path.join(diretorio_dados_brutos, nome_arquivo)
+                processar_planilha(caminho_completo, diretorio_dados_processados)
+
+    print("--- PROCESSAMENTO FINALIZADO ---")
