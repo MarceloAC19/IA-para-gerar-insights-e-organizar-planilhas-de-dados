@@ -2,8 +2,6 @@
 
 # 🚀 Análise de Vendas com IA | Desafio de Projeto
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
 Este repositório documenta a solução completa de um desafio de projeto onde uma Inteligência Artificial (Gemini) foi utilizada para executar um pipeline de análise de dados, desde a limpeza e consolidação de fontes brutas até a extração de insights estratégicos para a empresa fictícia "Meganium".
 
 ## 💻 Sobre o Projeto
