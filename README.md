@@ -1,0 +1,1 @@
+# IA-para-gerar-insights-e-organizar-planilhas-de-dados
