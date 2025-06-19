@@ -10,15 +10,6 @@ Este repositório documenta a solução completa de um desafio de projeto onde u
 
 O objetivo foi simular um cenário real de análise de dados, onde a interação com uma ferramenta de IA transformou dados de vendas brutos e descentralizados em uma base de conhecimento coesa e acionável. O projeto demonstra um fluxo de trabalho iterativo, no qual os requisitos foram sendo refinados, e o processo de tratamento de dados foi aprimorado para garantir a máxima qualidade e precisão nos resultados.
 
-### 🗺️ Navegação
-
-* [Tecnologias Utilizadas](#tecnologias-utilizadas)
-* [Estrutura do Repositório](#estrutura-do-repositório)
-* [Processo de Análise: Passo a Passo](#processo-de-análise-passo-a-passo)
-* [Recomendações Estratégicas](#recomendações-estratégicas)
-* [Como Utilizar o Projeto](#como-utilizar-o-projeto)
-* [Licença](#licença)
-
 ### 🛠️ Tecnologias Utilizadas
 
 * **Linguagem de Programação:** Python
