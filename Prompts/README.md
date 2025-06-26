@@ -1,51 +1,51 @@
-# 📄 Jornada de Prompts: A Evolução de uma Análise de Dados
+# 📄 Prompt Journey: The Evolution of a Data Analysis
 
-Este documento detalha a sequência de prompts de comando utilizados durante este chat para realizar uma análise de dados de vendas. A progressão dos prompts demonstra um fluxo de trabalho realista, que evoluiu de uma pergunta de negócio ampla para refinamentos técnicos específicos, resultando em um produto de dados robusto e bem documentado.
-
----
-
-### Fase 1: A Pergunta de Negócio Inicial
-
-Nesta fase, o objetivo era amplo: extrair valor de dados brutos.
-
-* **Prompt Principal:**
-    > "Consolidar todas as bases de terceiros para realizar uma análise. Transformar dados de vendas em informações relevantes para a fabricante. Quais são os produtos mais populares em cada país? Como otimizar o processo de transporte e logística até o momento da venda?"
-
-* **O Objetivo:** Obter uma visão 360º do negócio a partir de múltiplas fontes de dados, focando em insights de produto e logística.
-
-* **A Ação da IA:**
-    1.  Consolidação dos dados de 3 planilhas.
-    2.  Análise de popularidade de produtos por país.
-    3.  Análise de volume de vendas por país para sugerir otimizações.
-
-* **Evolução:** Este prompt inicial definiu o escopo do projeto e gerou os primeiros insights estratégicos.
+This document details the sequence of prompts used throughout this chat to perform a data analysis on sales figures. The progression of these prompts demonstrates a realistic workflow that evolved from a broad business question to specific technical refinements, resulting in a robust and well-documented data product.
 
 ---
 
-### Fase 2: Refinamento e Qualidade dos Dados
+### Phase 1: The Initial Business Question
 
-Após a análise inicial, o foco mudou para a qualidade e legibilidade dos dados.
+In this phase, the goal was broad: to extract value from raw data.
 
-* **Prompts Sequenciais:**
-    > 1. "mude o formato de date para o brasileiro"
-    > 2. "transforme a birth date também"
-    > 3. "mostre a idade média de cada país"
+* **Main Prompt:**
+    > "Consolidate all third-party datasets to perform an analysis. Transform sales data into relevant insights for the manufacturer. What are the most popular products in each country? How can we optimize the transportation and logistics process up to the point of sale?"
 
-* **O Objetivo:** Padronizar os dados para o contexto local (Brasil) e extrair novas informações demográficas a partir dos dados já limpos.
+* **The Goal:** To obtain a 360° view of the business from multiple data sources, focusing on product and logistics insights.
 
-* **A Ação da IA:**
-    1.  Formatou as colunas de data para o padrão `DD/MM/AAAA`.
-    2.  Calculou a idade de cada comprador e apresentou a média por país.
+* **The AI's Action:**
+    1.  Consolidated data from 3 spreadsheets.
+    2.  Analyzed product popularity by country.
+    3.  Analyzed sales volume by country to suggest optimizations.
 
-* **Evolução:** O projeto saiu da análise puramente de vendas para incluir a demografia dos clientes. A qualidade dos dados se tornou uma prioridade.
+* **Evolution:** This initial prompt defined the project's scope and generated the first strategic insights.
 
 ---
 
-### Fase 3: Documentação e Estruturação do Projeto
+### Phase 2: Refinement and Data Quality
 
-Com a análise concluída, a necessidade passou a ser a de documentar o processo de forma profissional.
+After the initial analysis, the focus shifted to data quality and readability.
 
-* **Prompts Principais:**
-    > 1. "Descrição do Desafio... Este projeto tem como objetivo explorar o uso de prompts..."
-    > 2. "se baseie neste formato de repositório" (com a imagem de um repositório GitHub)
-    > 3. "faça um arquivo read.me detalhando
+* **Sequential Prompts:**
+    > 1. "change the date format to the US standard"
+    > 2. "transform the birth date as well"
+    > 3. "show the average age for each country"
+
+* **The Goal:** To standardize the data for the local context (US) and to extract new demographic information from the already cleaned data.
+
+* **The AI's Action:**
+    1.  Formatted the date columns to the `MM/DD/YYYY` standard.
+    2.  Calculated the age of each buyer and presented the average per country.
+
+* **Evolution:** The project evolved from a purely sales-focused analysis to include customer demographics. Data quality became a priority.
+
+---
+
+### Phase 3: Documentation and Project Structuring
+
+With the analysis complete, the need shifted to documenting the process professionally.
+
+* **Main Prompts:**
+    > 1. "Challenge Description... This project aims to explore the use of prompts..."
+    > 2. "base it on this repository format" (with an image of a GitHub repository)
+    > 3. "create a detailed `README.md` file"
