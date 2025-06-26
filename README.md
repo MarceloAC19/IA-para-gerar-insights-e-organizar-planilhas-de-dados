@@ -1,51 +1,51 @@
-# IA-para-gerar-insights-e-organizar-planilhas-de-dados
+# AI-for-generating-insights-and-organizing-data-spreadsheets
 
-# 🚀 Análise de Vendas com IA | Desafio de Projeto
+# 🚀 Sales Analysis with AI | Project Challenge
 
-Este repositório documenta a solução completa de um desafio de projeto onde uma Inteligência Artificial (Gemini) foi utilizada para executar um pipeline de análise de dados, desde a limpeza e consolidação de fontes brutas até a extração de insights estratégicos para a empresa fictícia "Meganium".
+This repository documents the complete solution to a project challenge where an Artificial Intelligence (Gemini) was used to execute a data analysis pipeline, from cleaning and consolidating raw sources to extracting strategic insights for the fictional company "Meganium".
 
-## 💻 Sobre o Projeto
+## 💻 About the Project
 
-O objetivo foi simular um cenário real de análise de dados, onde a interação com uma ferramenta de IA transformou dados de vendas brutos e descentralizados em uma base de conhecimento coesa e acionável. O projeto demonstra um fluxo de trabalho iterativo, no qual os requisitos foram sendo refinados, e o processo de tratamento de dados foi aprimorado para garantir a máxima qualidade e precisão nos resultados.
+The goal was to simulate a real-world data analysis scenario, where interaction with an AI tool transformed raw, decentralized sales data into a cohesive and actionable knowledge base. The project demonstrates an iterative workflow in which requirements were refined, and the data processing pipeline was enhanced to ensure maximum quality and accuracy in the results.
 
-### 🛠️ Tecnologias Utilizadas
+### 🛠️ Technologies Used
 
-* **Linguagem de Programação:** Python
-* **Bibliotecas:** Pandas
-* **Ferramenta de IA:** Google Gemini
-* **Plataforma:** GitHub
+* **Programming Language:** Python
+* **Libraries:** Pandas
+* **AI Tool:** Google Gemini
+* **Platform:** GitHub
 
-### 📊 Processo de Análise: Passo a Passo
+### 📊 Analysis Process: Step-by-Step
 
-A análise foi conduzida através de uma série de prompts, evoluindo de uma simples solicitação para um processo de tratamento de dados mais robusto e detalhado.
+The analysis was conducted through a series of prompts, evolving from a simple request to a more robust and detailed data processing pipeline.
 
-#### Etapa 1: Solicitação Inicial e Primeira Análise
-* **Prompt:** "Consolidar todas as bases de terceiros para realizar uma análise. Transformar dados de vendas em informações relevantes para a fabricante. Quais são os produtos mais populares em cada país? Como otimizar o processo de transporte e logística até o momento da venda?"
-* **Ação da IA:** A IA unificou os três arquivos CSV e realizou uma análise preliminar.
+#### Step 1: Initial Request and First Analysis
+* **Prompt:** "Consolidate all third-party datasets to perform an analysis. Transform sales data into relevant insights for the manufacturer. What are the most popular products in each country? How can we optimize the transportation and logistics process up to the point of sale?"
+* **AI's Action:** The AI merged the three CSV files and performed a preliminary analysis.
 
-#### Etapa 2: Aprimoramento e Refinamento do Processo
-* **Prompts:** "mude o formato de date para o brasileiro", "transforme a birth date também".
-* **Evolução do Processo:** O fluxo de trabalho foi revisado para criar um pipeline de limpeza mais completo e robusto.
+#### Step 2: Process Improvement and Refinement
+* **Prompts:** "change the date format to the US standard", "transform the birth date as well".
+* **Process Evolution:** The workflow was revised to create a more complete and robust cleaning pipeline.
 
-#### Etapa 3: Pipeline de Limpeza e Formatação Profunda (Versão Final)
-* **Prompts:** "para os tres arquivos csv que te mandei, corrija as datas para o formato brasileiro também, após isso, integre-os ao ultimo comando que te dei" e "formate os arquivos csv para que todos fiquem organizados, caso tenha algum erro de formatação".
-* **Ação da IA (Workflow Refinado):**
-    1.  **Limpeza na Fonte:** A IA processou cada um dos três arquivos de dados brutos individualmente.
-    2.  **Formatação Abrangente:** Em cada arquivo, foram aplicadas as seguintes correções: padronização de nomes de colunas, formatação de datas para `DD/MM/AAAA`, remoção de espaços em branco e garantia de tipos de dados numéricos.
-    3.  **Consolidação Final:** Após a limpeza individual, os três arquivos processados foram unificados no arquivo `Consolidated_Sales_Data_Final.csv`.
+#### Step 3: Deep Cleaning and Formatting Pipeline (Final Version)
+* **Prompts:** "for the three csv files I sent you, also correct the dates to the US format, then integrate them into the last command I gave you" and "format the csv files so they are all organized, in case there are any formatting errors".
+* **AI's Action (Refined Workflow):**
+    1.  **Cleaning at the Source:** The AI processed each of the three raw data files individually.
+    2.  **Comprehensive Formatting:** In each file, the following corrections were applied: standardization of column names, formatting dates to `MM/DD/YYYY`, removing whitespace, and ensuring correct numeric data types.
+    3.  **Final Consolidation:** After individual cleaning, the three processed files were merged into the `Consolidated_Sales_Data_Final.csv` file.
 
-#### Etapa 4: Análise Demográfica
-* **Prompt:** "mostre a idade média de cada país".
-* **Ação da IA:** Utilizando o arquivo consolidado e limpo, a IA calculou a idade de cada comprador e agrupou os dados por país para extrair a média.
+#### Step 4: Demographic Analysis
+* **Prompt:** "show the average age for each country".
+* **AI's Action:** Using the clean, consolidated file, the AI calculated the age of each buyer and grouped the data by country to extract the average.
 
-### ✨ Recomendações Estratégicas
+### ✨ Strategic Recommendations
 
-1.  **Otimização Logística:** Os maiores volumes de venda estão concentrados no **Canadá** e na **França**. Recomenda-se priorizar a otimização logística nessas regiões.
-2.  **Marketing Direcionado:** As campanhas devem ser segmentadas por país, considerando a popularidade dos produtos e o perfil demográfico (idade) dos clientes.
-3.  **Gestão de Estoque Inteligente:** O estoque de produtos deve ser alocado geograficamente com base nos dados de popularidade para otimizar o inventário.
+1.  **Logistics Optimization:** The highest sales volumes are concentrated in **Canada** and **France**. It is recommended to prioritize logistics optimization in these regions.
+2.  **Targeted Marketing:** Campaigns should be segmented by country, considering product popularity and the demographic profile (age) of customers.
+3.  **Intelligent Inventory Management:** Product inventory should be allocated geographically based on popularity data to optimize inventory levels.
 
-### 🚀 Como Utilizar o Projeto
+### 🚀 How to Use This Project
 
-1.  **Clone o repositório.**
-2.  **Explore os dados:** Os dados brutos e processados estão na pasta `/data`.
-3.  **(Opcional) Execute a análise:** Se um notebook for incluído, instale as dependências (`pandas`, `jupyter`) e execute-o.
+1.  **Clone the repository.**
+2.  **Explore the data:** The raw and processed data are in the `/data` folder.
+3.  **(Optional) Run the analysis:** If a notebook is included, install the dependencies (`pandas`, `jupyter`) and run it.
