@@ -1,0 +1,94 @@
+```python
+import pandas as pd
+import os
+
+def process_spreadsheet(input_file_path, output_directory):
+    """
+    Reads, cleans, formats, and renames a single CSV spreadsheet.
+    """
+    try:
+        print(f"Processing: {input_file_path}...")
+
+        # 1. READ THE ORIGINAL SPREADSHEET (ASSUMING COMMA SEPARATOR)
+        df = pd.read_csv(input_file_path)
+
+        if df.empty:
+            print("  -> WARNING: The spreadsheet is empty. Skipping.")
+            return
+
+        # 2. CLEAN COLUMN NAMES
+        # Converts to lowercase, removes leading/trailing spaces, and replaces spaces with _
+        df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+
+        # 3. FORMAT DATE COLUMNS
+        date_columns = ['date', 'buyer_birth_date']
+        for col in date_columns:
+            if col in df.columns:
+                # Note: Changed format to MM/DD/YYYY for US standard
+                df[col] = pd.to_datetime(df[col], errors='coerce').dt.strftime('%m/%d/%Y')
+
+        # 4. REMOVE WHITESPACE FROM TEXT COLUMNS
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].str.strip()
+
+        # 5. GENERATE NEW DESCRIPTIVE FILENAME
+        # Tries to find the platform name in the 'site' column
+        platform_name = "Unknown"
+        if 'site' in df.columns:
+            # Takes the first site name found in the spreadsheet
+            platforms = df['site'].unique()
+            if len(platforms) > 0:
+                # Sanitize the platform name to be filesystem-friendly
+                platform_name = "".join(c for c in platforms[0] if c.isalnum())
+
+        # Tries to find the sales period
+        sales_period = "NoDate"
+        if 'date' in df.columns:
+            # Note: Using MM/DD/YYYY for parsing, matching the format set above
+            valid_dates = pd.to_datetime(df['date'], format='%m/%d/%Y', errors='coerce').dropna()
+            if not valid_dates.empty:
+                start_date = valid_dates.min().strftime('%Y%m%d')
+                end_date = valid_dates.max().strftime('%Y%m%d')
+                sales_period = f"{start_date}_to_{end_date}"
+
+        new_file_name = f"Sales_{platform_name}_{sales_period}.csv"
+
+        # 6. SAVE THE PROCESSED FILE WITH A COMPATIBLE FORMAT
+        # Note: Changed separator to comma for standard CSV, but kept UTF-8 for compatibility
+        output_file_path = os.path.join(output_directory, new_file_name)
+        df.to_csv(output_file_path, sep=',', encoding='utf-8-sig', index=False)
+        
+        print(f"  -> Saved as: {new_file_name}")
+
+    except Exception as e:
+        print(f"  -> ERROR processing file {input_file_path}: {e}")
+
+
+# --- CONFIGURATION AND EXECUTION ---
+if __name__ == "__main__":
+    # Define the input and output directories
+    raw_data_directory = "data/01_raw"
+    processed_data_directory = "data/02_processed"
+
+    # Create the output directory if it doesn't exist
+    os.makedirs(processed_data_directory, exist_ok=True)
+
+    print("--- STARTING SPREADSHEET PROCESSING ---")
+    
+    # Check if the input directory exists
+    if not os.path.isdir(raw_data_directory):
+        print(f"ERROR: Input directory '{raw_data_directory}' not found.")
+        print("Please create the folder and place your CSV files in it.")
+    else:
+        # List all CSV files in the input directory
+        files_to_process = [f for f in os.listdir(raw_data_directory) if f.endswith('.csv')]
+        
+        if not files_to_process:
+            print(f"No .csv files found in '{raw_data_directory}'.")
+        else:
+            for file_name in files_to_process:
+                full_path = os.path.join(raw_data_directory, file_name)
+                process_spreadsheet(full_path, processed_data_directory)
+
+    print("--- PROCESSING FINISHED ---")
+```
