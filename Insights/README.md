@@ -1,50 +1,46 @@
-### 1. Onde Estão os Insights Principais (Recomendações de Negócio)
+### 1. Where Are the Key Insights (Business Recommendations)
 
- **"✨ Recomendações Estratégicas"**.
+**"✨ Strategic Recommendations"**.
 
-> ### ✨ Recomendações Estratégicas
+> ### ✨ Strategic Recommendations
 >
-> A análise completa e refinada dos dados permitiu formular as seguintes recomendações:
+> The complete and refined data analysis allowed for the formulation of the following recommendations:
 >
-> 1.  **Otimização Logística:** Os maiores volumes de venda estão concentrados no **Canadá** e na **França**. Recomenda-se priorizar a otimização logística nessas regiões, avaliando a possibilidade de centros de distribuição locais para agilizar entregas e reduzir custos.
-> 2.  **Marketing Direcionado:** As campanhas devem ser segmentadas por país, considerando a popularidade dos produtos e o perfil demográfico (idade) dos clientes. Por exemplo, focar no `NEW MEGANIUM RG 40XXV` no Canadá, com uma comunicação voltada ao público mais jovem (média de 36 anos), enquanto no Japão a abordagem pode ser diferente.
-> 3.  **Gestão de Estoque Inteligente:** O estoque de produtos deve ser alocado geograficamente com base nos dados de popularidade para evitar excessos de itens com baixa procura e garantir a disponibilidade dos produtos mais vendidos em cada país.
+> 1.  **Logistics Optimization:** The highest sales volumes are concentrated in **Canada** and **France**. It is recommended to prioritize logistics optimization in these regions, evaluating the possibility of local distribution centers to speed up deliveries and reduce costs.
+> 2.  **Targeted Marketing:** Campaigns should be segmented by country, considering product popularity and the demographic profile (age) of customers. For example, focus on `NEW MEGANIUM RG 40XXV` in Canada, with communication aimed at a younger audience (average age of 36), while in Japan, the approach could be different.
+> 3.  **Intelligent Inventory Management:** Product inventory should be allocated geographically based on popularity data to avoid overstocking low-demand items and ensure the availability of best-selling products in each country.
 
 ---
 
-### 2. Onde Estão os Insights da Análise (Resultados Específicos)
+### 2. Where Are the Analysis Insights (Specific Results)
 
-**"📊 Processo de Análise: Passo a Passo"**, dentro de cada etapa.
+**"📊 Analysis Process: Step-by-Step"**, within each step.
 
-**Exemplo 1: Insight sobre Produtos Populares**
+**Example 1: Insight on Popular Products**
 
+> #### Step 2: Most Popular Products by Country
+> * **Challenge:** To identify which products performed best in each market.
+> * **Action:** The AI was instructed to group the data by country and product, summing the quantities sold.
+> * **Result:**
+>     | Country | Most Popular Product |
+>     | :--- | :--- |
+>     | **Canada** | `NEW MEGANIUM RG 40XXV` |
+>     | **France** | `NEW MEGANIUM RG35XX` |
+>     | **Australia** | `NEW MEGANIUM RG CubeXX`|
 
+**Example 2: Insight on Customer Profile**
 
-> #### Etapa 2: Produtos Mais Populares por País
-> * **Desafio:** Identificar quais produtos tinham melhor desempenho em cada mercado.
-> * **Ação:** A IA foi instruída a agrupar os dados por país e produto, somando as quantidades vendidas.
-> * **Resultado:**
->    | País | Produto Mais Popular |
->    | :--- | :--- |
->    | **Canadá** | `NEW MEGANIUM RG 40XXV` |
->    | **França** | `NEW MEGANIUM RG35XX` |
->    | **Austrália** | `NEW MEGANIUM RG CubeXX`|
+> #### Step 4: Demographic Analysis
+> * **Challenge:** To understand the age profile of customers in different regions.
+> * **Action:** A calculation of the average buyer age for each country was requested.
+> * **Result:**
+>     | Country | Average Age |
+>     | :--- | :--- |
+>     | **Japan** | 44.5 years |
+>     | **Germany** | 43.8 years |
+>     | **Canada** | 36.2 years |
 
-**Exemplo 2: Insight sobre o Perfil dos Clientes**
+### Quick Summary:
 
-
-
-> #### Etapa 4: Análise Demográfica
-> * **Desafio:** Entender o perfil de idade dos clientes em diferentes regiões.
-> * **Ação:** Foi solicitado o cálculo da idade média dos compradores para cada país.
-> * **Resultado:**
->    | País | Idade Média |
->    | :--- | :--- |
->    | **Japão** | 44.5 anos |
->    | **Alemanha** | 43.8 anos |
->    | **Canadá** | 36.2 anos |
-
-### Resumo Rápido:
-
-* **Para as recomendações de negócio:** Procure pelo título **"✨ Recomendações Estratégicas"**.
-* **Para os dados e tabelas da análise:** Procure dentro de cada etapa na seção **"📊 Processo de Análise: Passo a Passo"**.
+* **For business recommendations:** Look for the heading **"✨ Strategic Recommendations"**.
+* **For analysis data and tables:** Look within each step in the **"📊 Analysis Process: Step-by-Step"** section.
